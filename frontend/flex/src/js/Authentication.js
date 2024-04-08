@@ -67,7 +67,9 @@ export default class Authentication extends Component {
   }
 
   login(e) {
+
     e.preventDefault();
+    
     if(!this.checkInputOk()) return;
 
     this.setState({
@@ -80,6 +82,8 @@ export default class Authentication extends Component {
       password: this.state.password,
     }
     
+    // this.props.userLogin(this.state.username);
+
     fetch(
       'http://localhost:8080/login',
       { 
